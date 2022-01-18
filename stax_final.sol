@@ -389,9 +389,9 @@ contract StaxProtocol is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
     
-    address payable private marketingWallet = payable(0x867F78a010Ac5cE2697B5E6605ae5eBb11fb2A0a); // Marketing Wallet
-    address payable private ecosystemWallet = payable(0x867F78a010Ac5cE2697B5E6605ae5eBb11fb2A0a); // Ecosystem Wallet
-    address payable private devWallet = payable (0x9D157DDdeF8Be87FDfF2bC9CBf4F1ab57f7Ce951); // dev Wallet
+    address payable private marketingWallet = payable(0xDc56E71964B462ba3f2CB2F48ac9FA0647918583); // Marketing Wallet
+    address payable private ecosystemWallet = payable(0x9D157DDdeF8Be87FDfF2bC9CBf4F1ab57f7Ce951); // Ecosystem Wallet
+    address payable private devWallet = payable (0x867F78a010Ac5cE2697B5E6605ae5eBb11fb2A0a); // dev Wallet
     mapping (address => uint256) private _rOwned;
     mapping (address => uint256) private _tOwned;
     mapping (address => mapping (address => uint256)) private _allowances;
