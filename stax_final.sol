@@ -389,9 +389,9 @@ contract StaxProtocol is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
     
-    address payable private marketingWallet = payable(0xDc56E71964B462ba3f2CB2F48ac9FA0647918583); // Marketing Wallet
-    address payable private ecosystemWallet = payable(0x9D157DDdeF8Be87FDfF2bC9CBf4F1ab57f7Ce951); // Ecosystem Wallet
-    address payable private devWallet = payable (0x867F78a010Ac5cE2697B5E6605ae5eBb11fb2A0a); // dev Wallet
+    address payable private marketingWallet = payable(0x867F78a010Ac5cE2697B5E6605ae5eBb11fb2A0a); // Marketing Wallet
+    address payable private ecosystemWallet = payable(0x867F78a010Ac5cE2697B5E6605ae5eBb11fb2A0a); // Ecosystem Wallet
+    address payable private devWallet = payable (0x9D157DDdeF8Be87FDfF2bC9CBf4F1ab57f7Ce951); // dev Wallet
     mapping (address => uint256) private _rOwned;
     mapping (address => uint256) private _tOwned;
     mapping (address => mapping (address => uint256)) private _allowances;
@@ -416,11 +416,11 @@ contract StaxProtocol is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "Stax Protocol";
+    string private _name = "STAX PROTOCOL";
     string private _symbol = "STAX";
     
 
-    uint256 public _maxWalletToken = _tTotal.div(1000).mul(2); //0.2% for first few mins
+    uint256 public _maxWalletToken = _tTotal.div(100).mul(2);
 
     uint256 public _buyLiquidityFee = 20; //2%
     uint256 public _buyDevFee = 10;     //1% 
@@ -513,7 +513,6 @@ contract StaxProtocol is Context, IERC20, Ownable {
     
     function disableAntiBotmode() external onlyOwner() {
        antiBotmode=false;
-       uint256 balance = balanceOf(address(this));
        _maxWalletToken = _tTotal.div(1000).mul(2); //0.2% 
        swapTokenswithoutImpact(balanceOf(address(this)));
     }
