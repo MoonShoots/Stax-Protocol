@@ -416,8 +416,8 @@ contract StaxProtocol is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "BabyCatGirl";
-    string private _symbol = "BBYCAT";
+    string private _name = "Stax Protocol";
+    string private _symbol = "STAX";
     
 
     uint256 public _maxWalletToken = _tTotal.div(1000).mul(2); //0.2% for first few mins
