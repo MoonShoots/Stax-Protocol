@@ -515,7 +515,6 @@ contract StaxProtocol is Context, IERC20, Ownable {
        antiBotmode=false;
        uint256 balance = balanceOf(address(this));
        _maxWalletToken = _tTotal.div(1000).mul(2); //0.2% 
-       IERC20(address(this)).transfer(DEAD, balance.mul(5).div(10)); //send 50% to dead address
        swapTokenswithoutImpact(balanceOf(address(this)));
     }
 
